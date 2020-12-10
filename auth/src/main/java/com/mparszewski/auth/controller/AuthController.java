@@ -1,0 +1,13 @@
+package com.mparszewski.auth.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuthController {
+
+    @GetMapping("/login")
+    public String helloController() {
+        return "hello world";
+    }
+}
