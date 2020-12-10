@@ -1,3 +1,5 @@
 rootProject.name = 'microservices-transactions'
 include('auth')
 include('supply')
+include('warehouse')
+include('payment')
