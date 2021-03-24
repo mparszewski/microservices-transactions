@@ -1,6 +1,6 @@
 package com.mparszewski.auth.controller;
 
-import com.mparszewski.auth.model.User;
+import com.mparszewski.auth.model.ApplicationUser;
 import com.mparszewski.auth.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,8 +15,8 @@ public class UserController {
     private final UserDetailsServiceImpl userDetailsServiceImpl;
 
     @PostMapping("/sign-up")
-    public ResponseEntity<Void> signUp(@RequestBody User user) {
-        userDetailsServiceImpl.saveUser(user);
+    public ResponseEntity<Void> signUp(@RequestBody ApplicationUser applicationUser) {
+        userDetailsServiceImpl.saveUser(applicationUser);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

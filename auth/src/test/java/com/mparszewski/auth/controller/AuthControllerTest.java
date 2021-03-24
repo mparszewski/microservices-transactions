@@ -1,6 +1,6 @@
 package com.mparszewski.auth.controller;
 
-import com.mparszewski.auth.model.User;
+import com.mparszewski.auth.model.ApplicationUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,6 +9,6 @@ class AuthControllerTest {
 
     @Test
     void helloController() {
-        User user = new User();
+        ApplicationUser applicationUser = new ApplicationUser();
     }
 }
