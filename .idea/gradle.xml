@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/auth" />
+            <option value="$PROJECT_DIR$/order" />
             <option value="$PROJECT_DIR$/payment" />
             <option value="$PROJECT_DIR$/supply" />
             <option value="$PROJECT_DIR$/warehouse" />
