@@ -1,2 +1,17 @@
 server:
   port: 8081
+
+spring:
+  profiles:
+    active: localhost
+  datasource:
+    url: profile-specific
+    username: profile-specific
+    password: prfile-specific
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create-drop
+
+authentication:
+  token-validation-time: 900000
