@@ -1,9 +1,17 @@
 server:
   port: 9000
 
+spring:
+  application:
+    name: api-gateway
+
 eureka:
   instance:
     prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
+
+auth:
+  url: lb://auth
+  token: "token"
