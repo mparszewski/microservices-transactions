@@ -13,5 +13,5 @@ eureka:
     fetch-registry: true
 
 auth:
-  url: lb://auth
-  token: "token"
+  url: http://localhost:8081/auth
+  admin-token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc3OTUwODU3NH0.tUhro0xa41Nb8dgLImfpgNrxu4ZYHRnRaeKISKxOMAqaKYMBO35dloA1zaB_n6Vw8iFjvtJSo6mgL-PqYQeLXQ'

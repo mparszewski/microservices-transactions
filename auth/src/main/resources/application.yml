@@ -18,7 +18,7 @@ spring:
       ddl-auto: create-drop
 
 authentication:
-  token-validation-time: 900000
+  token-validation-time: 157784760000
 
 eureka:
   instance:

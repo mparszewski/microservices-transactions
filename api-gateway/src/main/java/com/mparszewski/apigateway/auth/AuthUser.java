@@ -2,16 +2,18 @@ package com.mparszewski.apigateway.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
 @Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public class AuthUser {
 
-    private final String username;
-    private final String email;
-    private final Date tokenExpiration;
-    private final List<String> roles;
+    private String username;
+    private String email;
+    private Date tokenExpiration;
+    private List<String> roles;
 }

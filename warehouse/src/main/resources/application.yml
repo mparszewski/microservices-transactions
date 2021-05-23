@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8082
+  servlet:
+    context-path: /warehouse
+
+spring:
+  application:
+    name: warehouse

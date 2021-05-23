@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
@@ -34,7 +35,7 @@ public class AuthenticationFilter implements GatewayFilter {
                 return onError(exchange);
             }
 
-            final String token = getAuthHeader(request);
+            final String token = getAuthHeader(request).replace("Bearer ", "");
 
             if (jwtService.isTokenExpired(token)) {
                 return onError(exchange);

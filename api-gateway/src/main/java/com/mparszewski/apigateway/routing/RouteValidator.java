@@ -13,7 +13,7 @@ public class RouteValidator {
     private static final String AUTH_PATH = "/auth";
 
     private static final String REGISTER_PATH = AUTH_PATH + "/register";
-    private static final String LOGIN_PATH = AUTH_PATH + "/register";
+    private static final String LOGIN_PATH = AUTH_PATH + "/login";
 
     public static final List<String> OPEN_API_ENDPOINTS = ImmutableList.of(
             REGISTER_PATH, LOGIN_PATH

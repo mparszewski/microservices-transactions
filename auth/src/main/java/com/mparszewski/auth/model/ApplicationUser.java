@@ -6,6 +6,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.FetchType.*;
+
 @Getter
 @Setter
 @Entity
@@ -29,7 +31,6 @@ public class ApplicationUser {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @ElementCollection
-    @Column(name = "roles")
+    @ElementCollection(fetch = EAGER)
     private List<Role> roles;
 }
