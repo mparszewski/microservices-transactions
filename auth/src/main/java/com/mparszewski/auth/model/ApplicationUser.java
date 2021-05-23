@@ -3,10 +3,10 @@ package com.mparszewski.auth.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.FetchType.*;
 
 @Getter
 @Setter
@@ -29,4 +29,8 @@ public class ApplicationUser {
 
     @Column(name = "password")
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(fetch = EAGER)
+    private List<Role> roles;
 }

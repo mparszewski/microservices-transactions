@@ -1,0 +1,17 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+auth:
+  url: http://localhost:8081/auth
+  admin-token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc3OTUwODU3NH0.tUhro0xa41Nb8dgLImfpgNrxu4ZYHRnRaeKISKxOMAqaKYMBO35dloA1zaB_n6Vw8iFjvtJSo6mgL-PqYQeLXQ'
