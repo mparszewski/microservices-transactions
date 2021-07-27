@@ -3,6 +3,7 @@ package com.mparszewski.auth.service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.mparszewski.auth.model.ApplicationUser;
+import com.mparszewski.auth.model.ReviewRequestDto;
 import com.mparszewski.auth.model.Role;
 import com.mparszewski.auth.model.UserDto;
 import com.mparszewski.auth.repository.UserRepository;
@@ -32,6 +33,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public void saveUser(ApplicationUser applicationUser) {
         applicationUser.setPassword(bCryptPasswordEncoder.encode(applicationUser.getPassword()));
         userRepository.save(applicationUser);
+    }
+
+    @Transactional
+    public void addReviewToList(ReviewRequestDto reviewRequestDto) {
+        userRepository.findById(reviewRequestDto.getUsername())
+                .ifPresent(applicationUser -> applicationUser.getReviews().add(reviewRequestDto.getReviewId()));
+    }
+
+    public boolean checkVerification(String username) {
+        return userRepository.findById(username)
+                .map(ApplicationUser::getVerified)
+                .orElse(false);
     }
 
     public UserDto getUserInfoFromToken(String token) {

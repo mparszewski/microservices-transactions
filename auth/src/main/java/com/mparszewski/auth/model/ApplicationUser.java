@@ -30,7 +30,19 @@ public class ApplicationUser {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "verified")
+    private Boolean verified;
+
     @Enumerated(EnumType.STRING)
     @ElementCollection(fetch = EAGER)
     private List<Role> roles;
+
+    @ElementCollection(fetch = LAZY)
+    private List<Long> productsBought;
+
+    @ElementCollection(fetch = LAZY)
+    private List<Long> reviews;
+
+    @ElementCollection(fetch = LAZY)
+    private List<Long> orders;
 }

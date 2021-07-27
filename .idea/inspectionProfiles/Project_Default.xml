@@ -5,6 +5,8 @@
       <option name="customHeaders">
         <set>
           <option value="issuer-token" />
+          <option value="username" />
+          <option value="roles" />
         </set>
       </option>
     </inspection_tool>

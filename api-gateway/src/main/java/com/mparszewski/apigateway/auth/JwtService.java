@@ -13,6 +13,7 @@ import java.net.URI;
 import java.util.Optional;
 
 import static java.util.Collections.emptyMap;
+import static java.util.Optional.ofNullable;
 import static org.springframework.http.HttpMethod.GET;
 
 @Component
@@ -34,7 +35,7 @@ public class JwtService extends JwtUtils {
         if (!responseEntity.getStatusCode().is2xxSuccessful()) {
             throw new UserNotFoundException("Could not find user for given token");
         } else {
-            return Optional.ofNullable(responseEntity.getBody());
+            return ofNullable(responseEntity.getBody());
         }
     }
 

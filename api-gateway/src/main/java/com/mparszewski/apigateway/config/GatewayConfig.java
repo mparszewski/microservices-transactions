@@ -28,8 +28,14 @@ public class GatewayConfig {
                         .uri("lb://auth"))
 
                 .route("warehouse-service", r -> r.path("/warehouse/**")
-                        .filters(f -> f.filter(authenticationFilter))
+                        .filters(f -> f.filter(authenticationFilter)
+                                .rewritePath("/warehouse/(?<segment>.*)", "/warehouse/${segment}"))
                         .uri("lb://warehouse"))
+
+                .route("order-service", r -> r.path("/order/**")
+                        .filters(f -> f.filter(authenticationFilter)
+                                .rewritePath("/order/(?<segment>.*)", "/order/${segment}"))
+                        .uri("lb://order"))
 
                 .build();
     }
